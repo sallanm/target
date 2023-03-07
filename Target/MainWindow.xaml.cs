@@ -91,6 +91,7 @@ namespace Target
                 TextMenor.Text = menorValor.ToString();
                 TextMaior.Text = maiorValor.ToString();
                 TextQtdeDias.Text = qtdeDias.ToString();
+                TextMedia.Text = media.ToString();
 
 
                 ListaDias.Items.Clear();
