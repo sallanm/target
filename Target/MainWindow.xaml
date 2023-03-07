@@ -55,8 +55,8 @@
                     <ListView Grid.Column="1" Margin="429,350,10,10" Name="ListaDias">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Test1" DisplayMemberBinding="{Binding dia}" Width="110"/>
-                                <GridViewColumn Header="Test2" DisplayMemberBinding="{Binding valor}" Width="117"/>
+                                <GridViewColumn Header="Dia" DisplayMemberBinding="{Binding dia}" Width="110"/>
+                                <GridViewColumn Header="Valor" DisplayMemberBinding="{Binding valor}" Width="117"/>
                             </GridView>
                         </ListView.View>
                     </ListView>

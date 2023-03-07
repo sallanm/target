@@ -15,7 +15,7 @@ namespace Target
 
             while (fibonacci <= val)
             {
-                sequencia += ", " + fibonacci; //salvar a sequencia de números
+                sequencia += ", " + fibonacci;
                 if (fibonacci == val) pertence = true; else pertence = false;
 
                 valAuxiliar = num;

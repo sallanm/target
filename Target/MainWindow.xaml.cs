@@ -15,9 +15,6 @@ using Newtonsoft.Json;
 
 namespace Target
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
 
@@ -61,10 +58,10 @@ namespace Target
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string tipoArquivo = Path.GetExtension(TextArquivoPath.Text);
-            double media = 0;
-            double maiorValor = 0;
-            double menorValor = 0;
-            int qtdeDias = 0;
+            double media;
+            double maiorValor;
+            double menorValor;
+            int qtdeDias;
             List<Item> lista = new List<Item>();
             if (BtnSelecionarArquivo.Content.ToString() == "Calcular") 
             {
@@ -77,8 +74,6 @@ namespace Target
                     menorValor = ex3.CalculoMenor(lista);
                     maiorValor = ex3.CalculoMaior(lista);
                     media = ex3.CalculoMedia(lista);
-                    //string teste2 = ex3.CalculoAcimaMediaDiaria(lista, media);
-                    //MessageBox.Show($"teste json \n{teste2}", "", MessageBoxButton.OK);
                     qtdeDias = ex3.CalculoQtdeDias(lista, media);
                 }
                 else
@@ -88,12 +83,9 @@ namespace Target
                     menorValor = ex3.CalculoMenor(lista);
                     maiorValor = ex3.CalculoMaior(lista);
                     media = ex3.CalculoMedia(lista);
-                    //string teste2 = ex3.CalculoAcimaMediaDiaria(lista, media);
-                    //MessageBox.Show($"teste json \n{teste2}", "", MessageBoxButton.OK);
                     qtdeDias = ex3.CalculoQtdeDias(lista, media);
                 }
                 
-                //CalculoEx3JSON(TextArquivoPath.Text.ToString());
                 BtnSelecionarArquivo.Content = "Selecionar Arquivo";
                 TextArquivoPath.Text = "";
                 TextMenor.Text = menorValor.ToString();
@@ -107,18 +99,14 @@ namespace Target
                     ListaDias.Items.Add(new Item() { dia = item.dia, valor = item.valor });
                 }
 
-
-
-
             }
             else
             {
-                // Configure open file dialog box
+                
                 var dialog = new Microsoft.Win32.OpenFileDialog();
-                dialog.DefaultExt = "(.json)|*.json|(.xml)|*.xml"; // Default file extension
-                dialog.Filter = "JSON (.json)|*.json|XML (.xml)|*.xml"; // Filter files by extension
+                dialog.DefaultExt = "(.json)|*.json|(.xml)|*.xml"; 
+                dialog.Filter = "JSON (.json)|*.json|XML (.xml)|*.xml"; 
 
-                // Show open file dialog box
                 dialog.ShowDialog();
 
                 TextArquivoPath.Text = dialog.FileName;

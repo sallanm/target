@@ -19,10 +19,8 @@ namespace Target
         public string LabelResultado;
         public List<Item> CalculoEx3JSON(string filePath)
         {
-            // ler o arquivo JSON
             string json = File.ReadAllText(filePath);
 
-            // desserializar o JSON em uma lista de objetos DiaValor
             List<Item> lista = JsonConvert.DeserializeObject<List<Item>>(json);
             return lista;
         }
